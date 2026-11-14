@@ -1,0 +1,16 @@
+{
+  "id": "/recipe-mix-public/",
+  "name": "Recipe Mix",
+  "short_name": "Recipe Mix",
+  "description": "A recipe box, meal planner and grocery list for Indian home cooks.",
+  "start_url": "/recipe-mix-public/#/recipes",
+  "scope": "/recipe-mix-public/",
+  "display": "standalone",
+  "background_color": "#fdf6ef",
+  "theme_color": "#fdf6ef",
+  "icons": [
+    { "src": "icons/recipe-mix-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/recipe-mix-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/recipe-mix-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

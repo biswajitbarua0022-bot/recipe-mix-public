@@ -1,0 +1,159 @@
+.detail-width { width: min(1072px, calc(100% - 32px)); margin-inline: auto; }
+.detail-bar { border-bottom: 1px solid var(--cream-300); padding-top: env(safe-area-inset-top); }
+.detail-bar-inner { display: flex; justify-content: space-between; align-items: center; min-height: 60px; }
+.detail-bar .back-link { color: var(--ink); }
+.detail-bar-actions { display: flex; align-items: center; gap: 4px; }
+.detail-favourite[aria-pressed='true'] { color: var(--tomato-500); background: var(--tomato-100); }
+.detail-bar :disabled { cursor: default; opacity: .55; }
+.detail-actions { position: relative; z-index: 4; }
+.detail-actions summary { display: grid; place-items: center; cursor: pointer; list-style: none; }
+.detail-actions summary::-webkit-details-marker { display: none; }
+.detail-actions[open] summary { background: var(--cream-200); }
+.detail-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  width: 184px;
+  padding: 4px;
+  border: 1px solid var(--cream-300);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+.detail-menu > :is(a, button) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 650;
+}
+.detail-menu > :is(a, button):hover { background: var(--cream-200); }
+
+.detail-content { padding-block: 28px 56px; }
+.detail-hero { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 40px; }
+.detail-cover {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+.detail-cover .recipe-image .recipe-art { width: min(50%, 190px); }
+.detail-cover.illustrated .recipe-art { transform: translateY(-16%); }
+.detail-photo-link {
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  min-height: 44px;
+  border-radius: var(--radius-pill);
+  transform: translateX(-50%);
+}
+.detail-intro { min-width: 0; }
+.detail-intro h1 { margin: 12px 0 14px; font-size: clamp(36px, 4vw, 56px); overflow-wrap: anywhere; }
+.detail-eyebrow {
+  color: var(--tomato-800);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.detail-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.detail-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 34px;
+  padding: 5px 12px;
+  border: 1px solid var(--cream-300);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+}
+.detail-pill > span { color: var(--ink-muted); font-weight: 500; }
+.detail-meta .diet-tag { min-height: 34px; padding-inline: 12px; font-size: 13px; }
+.detail-main-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 24px; }
+.detail-main-actions .button { min-height: 52px; border-radius: var(--radius-lg); }
+.detail-main-actions .primary-button { box-shadow: var(--shadow-md); }
+.detail-main-actions .button:disabled, .detail-grocery .button:disabled { color: var(--ink-muted); cursor: default; background: var(--white); }
+.detail-hint { color: var(--ink-muted); font-size: 13px; line-height: 1.45; }
+.detail-intro > .detail-hint { margin-top: 8px; }
+
+.detail-reading { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; gap: 28px; margin-top: 32px; }
+.detail-panel {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--cream-300);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+.detail-panel-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.detail-panel-heading h2 { font-size: 21px; }
+.detail-servings { display: flex; align-items: center; gap: 4px; min-height: 48px; border: 1px solid var(--line-strong); border-radius: var(--radius-pill); }
+.detail-servings output { font-size: 14px; font-weight: 750; overflow-wrap: anywhere; }
+.detail-servings button:disabled { opacity: .45; cursor: default; }
+.detail-scaling {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: var(--turmeric-100);
+  color: var(--turmeric-800);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.detail-method { display: grid; gap: 28px; margin: 0; padding: 14px 12px; list-style: none; }
+.detail-method li { display: grid; grid-template-columns: 36px minmax(0, 1fr); align-items: start; gap: 12px; }
+.detail-method p { padding-top: 4px; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; }
+.detail-step-number {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  color: var(--tomato-800);
+  background: var(--tomato-100);
+  font-size: 14px;
+  font-weight: 800;
+}
+.detail-grocery { display: grid; justify-items: center; padding-top: 10px; text-align: center; }
+.detail-grocery .button { padding-inline: 8px; border: 0; white-space: normal; }
+.recipe-unavailable { display: grid; justify-items: center; gap: 8px; max-width: 480px; padding-block: 64px; text-align: center; }
+.recipe-unavailable p { color: var(--ink-muted); }
+
+@media (max-width: 860px) {
+  .detail-width { width: min(600px, calc(100% - 28px)); }
+  .detail-content { padding-block: 14px calc(96px + env(safe-area-inset-bottom)); }
+  .detail-hero, .detail-reading { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .detail-cover .recipe-image { aspect-ratio: 1.45; }
+  .detail-cover .recipe-image .recipe-art { width: min(46%, 128px); }
+  .detail-cover.illustrated .recipe-art { transform: translateY(-19%); }
+  .detail-photo-link { bottom: 12%; }
+  .detail-intro h1 { margin: 10px 0 12px; }
+  .detail-meta { display: grid; grid-template-columns: max-content minmax(0, 1fr); justify-items: start; }
+  .detail-meta .detail-pill:first-child { grid-column: 1 / -1; }
+  .detail-main-actions { margin-top: 16px; }
+  .detail-main-actions > button { flex: 1; padding-inline: 10px; white-space: normal; }
+  .detail-start {
+    position: fixed;
+    z-index: 3;
+    inset: auto 0 0;
+    padding: 8px 14px calc(8px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--cream-300);
+    background: var(--white);
+  }
+  .detail-start .button { display: flex; max-width: 600px; margin-inline: auto; }
+  .detail-reading { margin-top: 18px; }
+  .detail-method { padding-inline: 4px; }
+}
+
+@media (max-width: 380px) {
+  .detail-panel { padding: 14px; }
+  .detail-servings { gap: 0; }
+  .detail-panel-heading h2 { font-size: 19px; }
+}

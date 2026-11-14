@@ -1,0 +1,104 @@
+.page:has(.meal-planner) { width: min(1200px, calc(100% - 40px)); padding-top: 24px; }
+.planner-heading { margin-bottom: 16px; }
+.planner-grocery-action { text-align: right; }
+.planner-grocery-action .button { border-radius: var(--radius-lg); }
+.planner-grocery-action .organizer-hint { margin-top: 4px; font-size: 12px; }
+.week-bar { display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 4px; min-height: 59px; padding: 6px; border: 1px solid var(--cream-300); border-radius: var(--radius-lg); background: var(--white); box-shadow: var(--shadow-sm); }
+.week-bar:has(.clear-week) { grid-template-columns: auto minmax(0, 1fr) auto auto auto; }
+.week-range { text-align: center; line-height: 1.3; }
+.week-range strong { display: block; font-size: 16px; }
+.week-range span { display: block; color: var(--ink-muted); font-size: 12px; }
+.week-bar .today-button { min-height: 44px; border-color: var(--line-strong); border-radius: var(--radius-md); }
+.planner-day-picker { display: none; }
+.day-picker { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.day-choice {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 4px;
+  min-width: 0;
+  min-height: 63px;
+  padding: 4px 0;
+  border: 1px solid var(--cream-300);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+}
+.day-choice strong { font-size: 17px; }
+.day-choice.today { border-color: var(--tomato-500); }
+.day-choice-today { position: absolute; inset: -8px auto auto 50%; padding: 1px 4px; border-radius: var(--radius-pill); background: var(--tomato-500); color: var(--white); font-size: 9px; line-height: 1.2; transform: translateX(-50%); }
+.day-choice[aria-pressed='true'] { border-color: var(--ink); background: var(--ink); color: var(--white); }
+.meal-dots { display: flex; gap: 3px; }
+.meal-dots i { width: 5px; height: 5px; border-radius: 50%; background: var(--cream-300); }
+.meal-dots i.filled { background: var(--tomato-500); }
+.day-choice[aria-pressed='true'] .meal-dots i.filled { background: var(--white); }
+.day-choice[aria-pressed='true'] .meal-dots i:not(.filled) { background: #695b50; }
+.planner-notice { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 12px; padding: 10px 12px; border-radius: var(--radius-md); background: var(--sage-100); color: var(--sage-700); font-size: 14px; }
+.planner-grid { --plan-rows: 104px repeat(3, 128px); display: grid; grid-template-columns: 84px repeat(7, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+.planner-row-labels, .plan-day { display: grid; grid-template-rows: var(--plan-rows); gap: 8px; min-width: 0; }
+.planner-row-labels span, .plan-cell-label { padding-top: 13px; color: var(--ink-muted); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .035em; }
+.plan-day-header { display: grid; align-content: space-between; padding: 9px; border: 1px solid var(--cream-300); border-radius: var(--radius-md); background: var(--white); }
+.plan-day-header.today { border-color: var(--tomato-200); background: var(--tomato-100); }
+.desktop-day-label { display: grid; grid-template-columns: auto auto; justify-content: space-between; gap: 3px; }
+.desktop-day-label span { grid-column: 1; color: var(--ink-muted); font-size: 13px; font-weight: 700; }
+.desktop-day-label strong { grid-column: 1; font-size: 21px; }
+.desktop-day-label small { grid-row: 1; grid-column: 2; align-self: start; padding: 2px 6px; border-radius: var(--radius-pill); background: var(--tomato-500); color: var(--white); font-size: 10px; }
+.clear-day { justify-self: start; padding-inline: 4px; margin-left: -4px; }
+.plan-slot { width: 100%; height: 100%; min-width: 0; border: 1px solid var(--cream-300); border-radius: var(--radius-md); text-align: left; }
+.plan-slot.filled { display: grid; grid-template-rows: 52px minmax(0, 1fr); gap: 7px; padding: 8px; background: var(--white); box-shadow: var(--shadow-sm); }
+.plan-slot.filled:hover { box-shadow: var(--shadow-md); }
+.plan-slot .recipe-image { min-height: 0; aspect-ratio: auto; overflow: hidden; border-radius: 7px; }
+.plan-slot .recipe-image .recipe-art { width: min(50%, 39px); }
+.plan-slot-text { display: grid; align-content: space-between; gap: 3px; min-width: 0; }
+.plan-slot-text strong { overflow: hidden; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.plan-slot-text small { color: var(--ink-muted); font-size: 12px; overflow-wrap: anywhere; }
+.plan-slot.empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; border: 1px dashed var(--line-strong); background: transparent; color: var(--ink-muted); font-size: 13px; font-weight: 700; }
+.plan-slot.empty:hover { background: var(--cream-200); }
+.mobile-slot-time, .mobile-slot-menu, .mobile-day-label, .plan-cell-label { display: none; }
+.slot-when { display: grid; gap: 12px; margin-bottom: 14px; }
+.slot-meal-choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: var(--radius-md); background: var(--cream-200); }
+.slot-meal-choices button { display: grid; align-content: center; gap: 2px; min-height: 45px; min-width: 0; padding: 4px 3px; border: 0; border-radius: 7px; background: transparent; font-size: 13px; }
+.slot-meal-choices button[aria-pressed='true'] { background: var(--white); box-shadow: var(--shadow-sm); }
+.slot-meal-choices small { overflow: hidden; color: var(--ink-muted); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.plan-warning { margin-bottom: 10px; padding: 8px; border-radius: var(--radius-md); background: var(--turmeric-100); color: var(--turmeric-800); font-size: 13px; }
+.slot-servings { display: inline-flex; align-items: center; gap: 2px; border: 1px solid var(--line-strong); border-radius: var(--radius-pill); }
+.slot-servings label { display: flex; align-items: center; gap: 3px; font-size: 13px; font-weight: 750; }
+.slot-servings .icon-button { width: 36px; }
+.slot-servings input { width: 42px; min-height: 38px; padding: 2px; border: 0; text-align: center; appearance: textfield; }
+.slot-servings input::-webkit-inner-spin-button { appearance: none; }
+.meal-options-servings { display: flex; align-items: center; gap: 14px; }
+.meal-options-servings .organizer-thumb { width: 62px; }
+.meal-options-actions { display: grid; gap: 6px; margin-top: 12px; }
+.meal-options-actions .button { justify-content: flex-start; min-height: 44px; border-radius: var(--radius-md); }
+
+@media (max-width: 1100px) {
+  .planner-day-picker { display: block; margin-top: 14px; }
+  .planner-grid { display: block; }
+  .planner-row-labels, .plan-day:not(.selected), .desktop-day-label { display: none; }
+  .plan-day { grid-template-rows: auto; gap: 12px; }
+  .plan-day-header, .plan-day-header.today { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0; border: 0; background: transparent; }
+  .mobile-day-label { display: block; font-size: 20px; }
+  .clear-day { white-space: nowrap; }
+  .plan-cell-label { display: block; padding-top: 0; margin-bottom: 4px; }
+  .plan-slot { height: auto; min-height: 76px; border-radius: var(--radius-lg); }
+  .plan-slot.filled { grid-template-columns: 56px minmax(0, 1fr) 24px; grid-template-rows: auto; align-items: center; gap: 12px; padding: 9px; }
+  .plan-slot .recipe-image { aspect-ratio: 1; }
+  .plan-slot-text strong { font-size: 16px; }
+  .plan-slot.empty { flex-direction: row; justify-content: flex-start; padding-inline: 14px; }
+  .mobile-slot-time, .mobile-slot-menu { display: inline; }
+}
+@media (max-width: 860px) {
+  .page:has(.meal-planner) { width: min(680px, calc(100% - 28px)); padding-top: 4px; }
+  .meal-planner { position: relative; padding-bottom: 90px; }
+  .planner-grocery-action { position: absolute; inset: auto 0 0; text-align: center; }
+  .planner-grocery-action .button { width: 100%; }
+}
+@media (max-width: 520px) {
+  .week-bar .icon-button { width: 34px; }
+  .week-bar .today-button { padding-inline: 10px; }
+  .week-range strong { font-size: 14px; }
+  .clear-week span { display: none; }
+  .clear-week { padding-inline: 8px; }
+}
